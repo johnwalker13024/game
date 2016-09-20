@@ -27,76 +27,76 @@ public class StatModifier {
         switch (stat) {
             case Strength:
                 statToReturn = statList.getStrength();
-            break;
+                break;
             case Dexterity:
                 statToReturn = statList.getDexterity();
-            break;
+                break;
             case Constitution:
                 statToReturn = statList.getConstitution();
-            break;
+                break;
             case Intelligence:
                 statToReturn = statList.getIntelligence();
-            break;
+                break;
             case Spirit:
                 statToReturn = statList.getSpirit();
-            break;
+                break;
             case RunSpeed:
                 statToReturn = statList.getRunSpeed();
-            break;
+                break;
             case Health:
                 statToReturn = statList.getHealth();
-            break;
+                break;
             case Mana:
                 statToReturn = statList.getMana();
-            break;
+                break;
             case MeleeAttackPower:
                 statToReturn = statList.getMeleeAttackPower();
-            break;
+                break;
             case RangedAttackPower:
                 statToReturn = statList.getRangedAttackPower();
-            break;
+                break;
             case SpellPower:
                 statToReturn = statList.getSpellPower();
-            break;
+                break;
             case MeleeHitChance:
                 statToReturn = statList.getMeleeHitChance();
-            break;
+                break;
             case RangedHitChance:
                 statToReturn = statList.getRangedHitChance();
-            break;
+                break;
             case SpellHitChance:
                 statToReturn = statList.getSpellHitChance();
-            break;
+                break;
             case MeleeCritChance:
                 statToReturn = statList.getMeleeCritChance();
-            break;
+                break;
             case RangedCritChance:
                 statToReturn = statList.getRangedCritChance();
-            break;
+                break;
             case SpellCritChance:
                 statToReturn = statList.getSpellCritChance();
-            break;
+                break;
             case DodgeChance:
                 statToReturn = statList.getDodgeChance();
-            break;
+                break;
             case ParryChance:
                 statToReturn = statList.getParryChance();
-            break;
+                break;
             case BlockChance:
                 statToReturn = statList.getBlockChance();
-            break;
+                break;
             case HealthRegen:
                 statToReturn = statList.getHealthRegen();
-            break;
+                break;
             case ManaRegen:
                 statToReturn = statList.getManaRegen();
-            break;
+                break;
             case Armor:
                 statToReturn = statList.getArmor();
-            break;
+                break;
             default:
                 statToReturn = -1;
-            break;
+                break;
         }
         return statToReturn;
     }

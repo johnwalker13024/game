@@ -1,27 +1,110 @@
 package RPG;
 
 import java.util.ArrayList;
-
+import java.util.EnumMap;
+// TODO: how will this class interface with the statModifierGroup?
 /**
+ * Handles the equipping and un-equipping of equipment
  * Created by johnathon on 9/19/2016.
  */
 public class EquipmentManager {
     private ArrayList<Equipment> equippedItems;
+    public EnumMap<EquipmentSlot, Integer> equipmentSlotEnumMap;
 
     public EquipmentManager() {
         equippedItems = new ArrayList<>(EquipmentSlot.values().length);
+        equipmentSlotEnumMap = new EnumMap<>(EquipmentSlot.class);
+        equipmentSlotEnumMap.put(EquipmentSlot.Back,     0);
+        equipmentSlotEnumMap.put(EquipmentSlot.Chest,    1);
+        equipmentSlotEnumMap.put(EquipmentSlot.Feet,     2);
+        equipmentSlotEnumMap.put(EquipmentSlot.Finger,   3);
+        equipmentSlotEnumMap.put(EquipmentSlot.Hands,    4);
+        equipmentSlotEnumMap.put(EquipmentSlot.Legs,     5);
+        equipmentSlotEnumMap.put(EquipmentSlot.Head,     6);
+        equipmentSlotEnumMap.put(EquipmentSlot.Neck,     7);
+        equipmentSlotEnumMap.put(EquipmentSlot.Shoulder, 8);
+        equipmentSlotEnumMap.put(EquipmentSlot.Trinket,  9);
+        equipmentSlotEnumMap.put(EquipmentSlot.Waist,    10);
+        equipmentSlotEnumMap.put(EquipmentSlot.Wrist,    11);
+        equipmentSlotEnumMap.put(EquipmentSlot.MainHand, 12);
+        equipmentSlotEnumMap.put(EquipmentSlot.OffHand,  13);
     }
 
+    /**
+     * Equips an item
+     * @param equipment to be equipped
+     * @param characterLevel player's current level to check against required level
+     */
     public void equip(Equipment equipment, int characterLevel) {
         if (equipment.getRequiredLevel() <= characterLevel) {
-            if (equippedItems.get(equipment.getEquipmentSlot()) != null) {
-
+            if (equippedItems.get(equipmentSlotEnumMap.get(equipment.getEquipmentSlot())) != null) {
+                unequip(equipment.getEquipmentSlot());
             }
-        }
+            equippedItems.add(equipmentSlotEnumMap.get(equipment.getEquipmentSlot()), equipment);
+        } // TODO: add an error message
     }
 
-    public void unequip(Equipment equipment) {
-        equippedItems.remove(equipment);
+    /**
+     * Un-equips an item
+     * @param slot indicates which piece to remove
+     */
+    public void unequip(EquipmentSlot slot) {
+        equippedItems.remove(equipmentSlotEnumMap.get(slot).intValue());
         // TODO: add code to transfer item to inventory
+    }
+
+    /**
+     * Returns the currently equipped gear in the specified slot
+     * @param slot which piece of gear we want
+     * @return Equipment object currently equipped
+     */
+    public Equipment getEquippedItemInSlot(EquipmentSlot slot) {
+        Equipment equipmentToReturn = null;
+
+        switch(slot) {
+            case Back:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Back));
+                break;
+            case Chest:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Chest));
+                break;
+            case Feet:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Feet));
+                break;
+            case Finger:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Finger));
+                break;
+            case Hands:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Hands));
+                break;
+            case Legs:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Legs));
+                break;
+            case Head:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Head));
+                break;
+            case Neck:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Neck));
+                break;
+            case Shoulder:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Shoulder));
+                break;
+            case Trinket:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Trinket));
+                break;
+            case Waist:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Waist));
+                break;
+            case Wrist:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.Wrist));
+                break;
+            case MainHand:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.MainHand));
+                break;
+            case OffHand:
+                equipmentToReturn = equippedItems.get(equipmentSlotEnumMap.get(EquipmentSlot.OffHand));
+                break;
+        }
+        return equipmentToReturn;
     }
 }
