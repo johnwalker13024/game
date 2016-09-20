@@ -7,6 +7,7 @@ package RPG;
  */
 public class BaseCharacter {
     private StatModifierGroup statModifierGroup;
+    private EquipmentManager equipmentManager;
 
     // primary stats
     private int baseStrength;
