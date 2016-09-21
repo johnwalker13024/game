@@ -3,17 +3,19 @@ package RPG;
 import java.util.ArrayList;
 
 /**
- * StatModifierGroup keeps track of what stat modifiers the character currently has. This could range from the bonus
+ * StatModifierManager keeps track of what stat modifiers the character currently has. This could range from the bonus
  * stats you gan from equipped armor and weapons to temporary buffs.
  *
  * Created by johnathon on 9/19/2016.
  */
-public class StatModifierGroup {
+public class StatModifierManager {
     private ArrayList<StatModifier> statTable;
+    private BaseCharacter character;
 
     // default constructor
-    public StatModifierGroup() {
+    public StatModifierManager() {
         statTable = new ArrayList<>();
+        this.character = character;
     }
 
     /**
