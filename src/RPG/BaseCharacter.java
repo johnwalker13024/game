@@ -21,7 +21,7 @@ public class BaseCharacter {
     public int getIntelligence() { return baseIntelligence + statModifierManager.getStatModifierSum(Stat.Intelligence); }
     public int getSpirit()       { return baseSpirit       + statModifierManager.getStatModifierSum(Stat.Spirit);       }
 
-    // secondary stats
+    // secondary stats TODO: return statModifierManager values and implement algorithms
     public int getRunSpeed()          { return 0; }
     public int getHealth()            { return 0; }
     public int getMana()              { return 0; }
@@ -58,7 +58,7 @@ public class BaseCharacter {
     }
 
     /**
-     * Attempt to equip an item
+     * Attempt to equip an item. Updates the StatModifierManager if needed
      * @param equipment the item to be equipped
      */
     public void equip(Equipment equipment) {
@@ -70,7 +70,7 @@ public class BaseCharacter {
     }
 
     /**
-     * Attempt to un-equip the item in specified slot
+     * Attempt to un-equip the item in specified slot. Updates the StatModifierManager if needed
      * @param slot attempt to un-equip the item in this slot
      */
     public void unequip(EquipmentSlot slot) {

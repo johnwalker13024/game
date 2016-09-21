@@ -10,12 +10,10 @@ import java.util.ArrayList;
  */
 public class StatModifierManager {
     private ArrayList<StatModifier> statTable;
-    private BaseCharacter character;
 
     // default constructor
     public StatModifierManager() {
         statTable = new ArrayList<>();
-        this.character = character;
     }
 
     /**
@@ -36,7 +34,7 @@ public class StatModifierManager {
 
     /**
      * Returns the sum of all modifiers for the specified stat
-     * @param stat
+     * @param stat modifiers will be returned for the specified stat
      */
     public int getStatModifierSum(Stat stat) {
         int sum = 0;
