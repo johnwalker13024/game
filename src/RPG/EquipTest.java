@@ -85,5 +85,10 @@ public class EquipTest {
         character.addItemToInventory(oldBoots);
         character.addItemToInventory(oldBoots);
         character.displayInventoryList();
+
+        System.out.println("\nAdding two more new items...");
+        character.addItemToInventory(oldBoots);
+        character.addItemToInventory(oldBoots);
+        character.displayInventoryList();
     }
 }

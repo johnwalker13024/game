@@ -43,6 +43,9 @@ public class InventoryManager {
             return false;
         }
         items[slot] = null;
+        if (slot < nextAvailableSlot) {
+            nextAvailableSlot = slot;
+        }
         return true;
     }
 
@@ -57,7 +60,6 @@ public class InventoryManager {
             nextAvailableSlot++;
         }
         nextAvailableSlot++;
-
         if (nextAvailableSlot == MAX_ITEMS) {
             full = true;
         }
