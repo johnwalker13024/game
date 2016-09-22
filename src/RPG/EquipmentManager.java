@@ -1,9 +1,7 @@
 package RPG;
 
-import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.function.BooleanSupplier;
-// TODO: how will this class interface with the statModifierManager?
+
 /**
  * Handles the equipping and un-equipping of equipment
  * Created by johnathon on 9/19/2016.

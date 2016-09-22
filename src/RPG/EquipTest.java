@@ -52,5 +52,38 @@ public class EquipTest {
         } else {
             System.out.println("Nothing is equipped in that slot.");
         }
+
+        System.out.println("\nAdding old shirt to inventory and displaying inventory...");
+        character.addItemToInventory(oldShirt);
+        character.displayInventoryList();
+
+        System.out.println("\nAdding several more items to the inventory...");
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.addItemToInventory(oldShirt);
+        character.displayInventoryList();
+
+        System.out.println("\nRemoving a few shirts...");
+        character.removeItemFromInventory(0);
+        character.removeItemFromInventory(3);
+        character.removeItemFromInventory(8);
+        character.displayInventoryList();
+
+        System.out.println("\nAdding two new items...");
+        Equipment oldBoots = new Equipment(
+                new StatList(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+                "Old Boots",
+                EquipmentSlot.Feet,
+                1
+        );
+        character.addItemToInventory(oldBoots);
+        character.addItemToInventory(oldBoots);
+        character.displayInventoryList();
     }
 }

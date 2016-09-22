@@ -8,6 +8,7 @@ package RPG;
 public class BaseCharacter {
     private StatModifierManager statModifierManager;
     private EquipmentManager equipmentManager;
+    private InventoryManager inventoryManager;
 
     // primary stats
     private int baseStrength;
@@ -54,6 +55,7 @@ public class BaseCharacter {
     public BaseCharacter() {
         statModifierManager = new StatModifierManager();
         equipmentManager = new EquipmentManager(this);
+        inventoryManager = new InventoryManager();
         level = 1;
     }
 
@@ -89,5 +91,28 @@ public class BaseCharacter {
      */
     public Equipment getCurrentlyEquippedItem(EquipmentSlot slot) {
         return equipmentManager.getEquippedItemInSlot(slot);
+    }
+
+    /**
+     * Add an item to your inventory
+     * @param item to be added
+     */
+    public void addItemToInventory(Item item) {
+        inventoryManager.add(item);
+    }
+
+    /**
+     * Remove an item from the inventory
+     * @param slot specify which item is to be removed
+     */
+    public void removeItemFromInventory(int slot) {
+        inventoryManager.remove(slot);
+    }
+
+    /**
+     * Displays the contents of the inventory
+     */
+    public void displayInventoryList() {
+        inventoryManager.display();
     }
 }
