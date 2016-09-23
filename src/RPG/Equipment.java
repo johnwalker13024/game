@@ -52,3 +52,18 @@ public class Equipment implements Item {
         return equipmentSlot;
     }
 }
+
+/**
+ * what are all the things that an item can have?
+ * activated abilities
+ * passive abilities
+ * set bonuses
+ * durability
+ * flavor text
+ * light, medium, heavy, colossal
+ * rarity
+ * sockets
+ *
+ * I need to create a random item generator for greens, blues and purples
+ * green main stat
+ */
