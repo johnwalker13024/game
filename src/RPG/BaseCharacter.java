@@ -23,31 +23,38 @@ public class BaseCharacter {
     public int getSpirit()       { return baseSpirit       + statModifierManager.getStatModifierSum(Stat.Spirit);       }
 
     // secondary stats TODO: return statModifierManager values and implement algorithms
-    public int getRunSpeed()          { return 0; }
-    public int getHealth()            { return 0; }
-    public int getMana()              { return 0; }
-    public int getMeleeAttackPower()  { return 0; }
-    public int getRangedAttackPower() { return 0; }
-    public int getSpellPower()        { return 0; }
-    public int getMeleeHitChance()    { return 0; }
-    public int getRangedHitChance()   { return 0; }
-    public int getMeleeCritChance()   { return 0; }
-    public int getRangedCritChance()  { return 0; }
-    public int getSpellCritChance()   { return 0; }
-    public int getDodgeChance()       { return 0; }
-    public int getParryChance()       { return 0; }
-    public int getBlockChance()       { return 0; }
-    public int getHealthRegen()       { return 0; }
-    public int getManaRegen()         { return 0; }
-    public int getArmor()             { return 0; }
+    public int getRunSpeed()                { return 0; }
+    public int getHealth()                  { return 0; }
+    public int getMana()                    { return 0; }
+    public int getMeleeAttackPower()        { return 0; }
+    public int getRangedAttackPower()       { return 0; }
+    public int getSpellPower()              { return 0; }
+    public int getMeleeHitChance()          { return 0; }
+    public int getRangedHitChance()         { return 0; }
+    public int getMeleeCritChance()         { return 0; }
+    public int getRangedCritChance()        { return 0; }
+    public int getSpellCritChance()         { return 0; }
+    public int getDodgeChance()             { return 0; }
+    public int getParryChance()             { return 0; }
+    public int getBlockChance()             { return 0; }
+    public int getHealthRegen()             { return 0; }
+    public int getManaRegen()               { return 0; }
+    public int getArmor()                   { return 0; }
+    public int getFireResist()              { return 0; } // TODO: add the following stats to the StatModifierManager class
+    public int getIceResist()               { return 0; }
+    public int getPoisonResist()            { return 0; }
+    public int getLightningResist()         { return 0; }
+    public int getLifeSteal()               { return 0; }
+    public int getPhysicalDamageReduction() { return 0; }
+    public int getMagicDamageReduction()    { return 0; }
 
     // level
     private int level;
     private int experience;
     private int restedExperience;
-    public int getLevel()            { return level;            }
-    public int getExperience()       { return experience;       }
-    public int getRestedExperience() { return restedExperience; }
+    public  int getLevel()            { return level;            }
+    public  int getExperience()       { return experience;       }
+    public  int getRestedExperience() { return restedExperience; }
 
     /**
      * Default constructor

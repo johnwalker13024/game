@@ -55,15 +55,20 @@ public class Equipment implements Item {
 
 /**
  * what are all the things that an item can have?
+ * name
+ * stats
+ * slot
+ * req lvl
  * activated abilities
- * passive abilities
+ * PROCS
  * set bonuses
  * durability
  * flavor text
  * light, medium, heavy, colossal
  * rarity
  * sockets
+ * PICTURE - thumbnail
  *
  * I need to create a random item generator for greens, blues and purples
- * green main stat
+ * green main stat = current level / 5, blues are /4, purples are /3
  */
