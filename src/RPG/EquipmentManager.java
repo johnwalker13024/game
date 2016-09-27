@@ -66,6 +66,7 @@ public class EquipmentManager {
      * Returns the currently equipped gear in the specified slot
      * @param slot which piece of gear we want
      * @return Equipment object currently equipped
+     * TODO: can this method be simplified to just have a get and no switch?
      */
     public Equipment getEquippedItemInSlot(EquipmentSlot slot) {
         Equipment equipmentToReturn = null;

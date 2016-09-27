@@ -5,7 +5,7 @@ package RPG;
  */
 public class EquipTest {
     public static void main(String args[]) {
-        BaseCharacter character = new BaseCharacter();
+        BaseCharacter character = new BaseCharacter("Player One");
 
         Equipment oldShirt = new Equipment(
                 new StatList(0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
@@ -90,5 +90,18 @@ public class EquipTest {
         character.addItemToInventory(oldBoots);
         character.addItemToInventory(oldBoots);
         character.displayInventoryList();
+
+        // cast a spell
+        System.out.println("\nPlayer will learn a new spell and use it...");
+        Spell fireball = new Spell("Fireball", Effect.Fireball_Rank_1, 30, 10);
+        character.learnNewSpell(fireball);
+        BaseCharacter badGuy = new BaseCharacter("Bad Guy");
+        character.cast(fireball, badGuy);
+        System.out.println("badGuy's current health: " + badGuy.getCurrentHealth());
+
+        // check spell crit chance
+        System.out.println("\nChecking player's intelligence and spell crit chance...");
+        System.out.println("intelligence: " + character.getIntelligence());
+        System.out.println("spell crit: " + character.getSpellCritChance());
     }
 }

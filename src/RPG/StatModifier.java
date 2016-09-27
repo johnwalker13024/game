@@ -95,7 +95,7 @@ public class StatModifier {
                 statToReturn = statList.getArmor();
                 break;
             default:
-                statToReturn = -1;
+                statToReturn = 0;
                 break;
         }
         return statToReturn;

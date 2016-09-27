@@ -49,7 +49,7 @@ public class InventoryManager {
         return true;
     }
 
-    /** TODO: rewrite this algorithm... it doesn't work
+    /**
      * Figures out what is the next item slot available. If none are, flags the 'full' variable as true
      */
     private void computeNextAvailableSlot() {
