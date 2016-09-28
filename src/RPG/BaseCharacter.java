@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * Created by johnathon on 9/18/2016.
  */
-public class BaseCharacter {
+public class BaseCharacter implements TimerListener {
 
     private String name;
     public  String getName() { return name; }
@@ -268,5 +268,10 @@ public class BaseCharacter {
             damageTaken = (int)(flatDamageReduction * damage);
         }
         reduceHealth(damageTaken);
+    }
+
+    @Override
+    public void update() {
+        System.out.println("TimerListener is getting an update...");
     }
 }

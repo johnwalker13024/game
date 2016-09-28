@@ -43,7 +43,6 @@ public class Spell {
 
         // TODO: make sure there are no barriers in Line of Sight (LoS)
 
-        // TODO: implement the critical hit algorithm
         // compute hit chance
         // compute different hit chance if caster and target are the same (100% chance for self-cast)
         Boolean successfulCast = false;

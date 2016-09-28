@@ -1,5 +1,8 @@
 package RPG;
 
+import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
+
 /**
  * Created by johnathonwalker on 9/20/16.
  */
@@ -103,5 +106,25 @@ public class EquipTest {
         System.out.println("\nChecking player's intelligence and spell crit chance...");
         System.out.println("intelligence: " + character.getIntelligence());
         System.out.println("spell crit: " + character.getSpellCritChance());
+
+        // test the Timer class
+        System.out.println("\nTesting the timer class (4 timers, set to 2 seconds, 3, 4, and 5)");
+        Timer timer = new Timer(2000, character);
+        timer.execute();
+
+        timer = new Timer(3000, character);
+        timer.execute();
+
+        timer = new Timer(4000, character);
+        timer.execute();
+
+        timer = new Timer(5000, character);
+        timer.execute();
+
+        // keep program from terminating until keyboard input
+        Scanner in = new Scanner(System.in);
+        String s;
+        System.out.println("Enter a string");
+        s = in.nextLine();
     }
 }
