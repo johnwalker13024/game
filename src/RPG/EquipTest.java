@@ -96,7 +96,7 @@ public class EquipTest {
 
         // cast a spell
         System.out.println("\nPlayer will learn a new spell and use it...");
-        Spell fireball = new Spell("Fireball", Effect.Fireball_Rank_1, 30, 10);
+        Spell fireball = new Spell("Fireball", Effect.Fireball_Rank_1, 30, 10, 1000, null);
         character.learnNewSpell(fireball);
         BaseCharacter badGuy = new BaseCharacter("Bad Guy");
         character.cast(fireball, badGuy);
@@ -107,24 +107,38 @@ public class EquipTest {
         System.out.println("intelligence: " + character.getIntelligence());
         System.out.println("spell crit: " + character.getSpellCritChance());
 
-        // test the Timer class
-        System.out.println("\nTesting the timer class (4 timers, set to 2 seconds, 3, 4, and 5)");
-        Timer timer = new Timer(2000, character);
-        timer.execute();
-
-        timer = new Timer(3000, character);
-        timer.execute();
-
-        timer = new Timer(4000, character);
-        timer.execute();
-
-        timer = new Timer(5000, character);
-        timer.execute();
+        character.cast(fireball, badGuy);
+        character.cast(fireball, badGuy);
+        character.cast(fireball, badGuy);
+//        // test the Timer class
+//        System.out.println("\nTesting the timer class (4 timers, set to 2 seconds, 3, 4, and 5)");
+//        Timer timer = new Timer(2000, character);
+//        timer.execute();
+//
+//        timer = new Timer(3000, character);
+//        timer.execute();
+//
+//        timer = new Timer(4000, character);
+//        timer.execute();
+//
+//        timer = new Timer(5000, character);
+//        timer.execute();
 
         // keep program from terminating until keyboard input
         Scanner in = new Scanner(System.in);
-        String s;
-        System.out.println("Enter a string");
-        s = in.nextLine();
+        String s = "";
+        while (!s.equals("x")) {
+            System.out.println("Enter a command");
+            s = in.nextLine();
+            switch (s) {
+                case "f":
+                    System.out.println("Casting fireball...");
+                    character.cast(fireball, badGuy);
+                    System.out.println("badGuy's current health: " + badGuy.getCurrentHealth());
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

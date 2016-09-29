@@ -36,6 +36,14 @@ public class EffectLibrary { // TODO: turn this class into a background thread, 
         target.takeSpellDamage((int)damage, SpellType.Fire, null/*todo: change this to add a burning debuff*/);
     }
 
+    private static void Fireball_Rank_1_Burn_DoT(BaseCharacter caster, BaseCharacter target) {
+        if (caster == null || target == null) {
+            return;
+        }
+        float damage = 1.0f;
+        //target.takeSpellDamage();
+    }
+
     private static void Heal_Rank_1(BaseCharacter caster, BaseCharacter target) {
 
     }

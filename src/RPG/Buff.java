@@ -13,18 +13,18 @@ public class Buff {
     private Proc proc;
     private String name;
     private String description;
-    private int duration;
+    private long duration;
 
     /**
      * constructor: name and description required, as well as at least one of the other two arguments
      * @param name of buff
      * @param description what does it do (the player will rely on this)
      * @param proc can be null
-     * @param statModifier can be null, but statModifier and proc cannot both be null
+     * @param statModifier can be null
      * @param duration the length of the buff, in seconds
      */
-    public Buff(String name, String description, Proc proc, StatModifier statModifier, int duration) {
-        if ((name == null || description == null) || (proc == null && statModifier == null)) {
+    public Buff(String name, String description, Proc proc, StatModifier statModifier, long duration) {
+        if (name == null || description == null) {
             return;
         }
         this.name = name;
@@ -50,7 +50,7 @@ public class Buff {
         return description;
     }
 
-    public int getDuration() {
+    public long getDuration() {
         return duration;
     }
 }
